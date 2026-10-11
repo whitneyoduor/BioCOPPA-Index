@@ -10,4 +10,5 @@ export const NAV_ITEMS: NavItem[] = [
   { to: '/methodology', label: 'Methodology' },
   { to: '/kenya', label: 'Kenya Pilot' },
   { to: '/users', label: 'Users' },
+  { to: '/assessment', label: 'Take the Assessment' },
 ];

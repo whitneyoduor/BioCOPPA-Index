@@ -3,13 +3,12 @@ import { CheckList, CtaBanner, Section } from '../components/Page';
 import { DOMAIN_CONTENT } from '../content/domains';
 
 const PURPOSE_ITEMS = [
-  'Identify the key dimensions and indicators influencing the development and uptake of biological crop protection products.',
-  'Measure the enabling environment for biological crop protection products.',
-  'Provide a comparable and structured country-level assessment.',
-  'Identify strengths, weaknesses, and gaps within the biological crop protection sector.',
-  'Identify priority areas for investment, policy reform, capacity building, and collaboration.',
-  'Support evidence-based decision-making by governments, regulators, researchers, industry, and development partners.',
-  'Track changes in the biological crop protection environment over time.',
+  'Provide a common structure for assessing the enabling environment for biological crop protection products.',
+  'Integrate research, industry, policy and regulatory conditions within a single country-level assessment.',
+  'Identify systemic strengths, advantages and bottlenecks shaping the effectiveness of the sector.',
+  'Identify priority areas for investment, policy reform, capacity building and collaboration.',
+  'Support evidence-based decision-making by governments, regulators, researchers, industry and development partners.',
+  'Track changes in the biological crop protection environment over time through repeated assessments.',
 ];
 
 export function Home() {
@@ -31,15 +30,15 @@ export function Home() {
         <div className="container hero__inner">
           <p className="hero__kicker">Biological Crop Protection Products Access Index</p>
           <h1 className="hero__headline">
-            Measuring the enabling environment for biological crop protection products
+            Assessing enabling environments for biological crop protection products in Africa and the Middle East
           </h1>
           <p className="hero__tagline">
-            A biological crop protection products access research initiative.
+            A systems-based framework for biological crop protection products access.
           </p>
           <p className="hero__caption">
-            The BioCOPPA Index combines stakeholder assessments of importance and current performance to
-            produce a measurable, comparable country-level index across research, industry, policy, and
-            regulatory systems.
+            The BioCOPPA Index is a stakeholder-informed, co-created framework that combines stakeholder
+            assessments of indicator importance and current performance to produce a measurable, comparable
+            country-level index across research, industry, policy and regulatory systems.
           </p>
           <div className="hero__actions">
             <Link to="/domains" className="btn btn--gold">
@@ -48,6 +47,9 @@ export function Home() {
             <Link to="/methodology" className="btn btn--outline-light">
               Read the Methodology
             </Link>
+            <Link to="/assessment" className="btn btn--outline-light">
+              Take the Assessment
+            </Link>
           </div>
         </div>
       </section>
@@ -55,20 +57,21 @@ export function Home() {
       <Section id="overview" title="About the Index" className="section--white">
         <div className="two-col">
           <p>
-            The Biological Crop Protection Products Access (BioCOPPA) Index is a tool designed to assess the
-            enabling environment for biological crop protection products (BCPPs), including biopesticides and
-            biological control agents.
+            The Biological Crop Protection Products Access (BioCOPPA) Index is a systems-based framework for
+            assessing the enabling environment for biological crop protection products, including biopesticides
+            and biological control agents, with an initial focus on Africa and the Middle East.
           </p>
           <p>
-            The index measures the extent to which a country&rsquo;s research, industry, policy, regulatory,
-            institutional, and market systems support the development, registration, production, distribution,
-            accessibility, and adoption of biological crop protection products.
+            The framework integrates three interconnected domains — Research and Development, Industry
+            Competitiveness, and Policy and Regulatory Frameworks — to assess the conditions that influence the
+            development, regulation, commercialisation and accessibility of biological crop protection
+            products.
           </p>
         </div>
         <p className="section__lead">
-          BioCOPPA combines stakeholder assessments of the importance of specific factors with assessments of
-          the country&rsquo;s current performance or status in those areas. These assessments are used to
-          produce a measurable country-level index.
+          BioCOPPA is a diagnostic and monitoring framework rather than a country-ranking or causal assessment
+          tool. Its value lies in the composite score combined with the domain and indicator-level results that
+          identify where targeted interventions are most needed.
         </p>
       </Section>
 
@@ -136,9 +139,17 @@ export function Home() {
       </section>
 
       <CtaBanner
+        kicker="Participate"
+        title="Take part in the BioCOPPA country assessment"
+        caption="Stakeholders assess the importance and performance of indicators across research, industry, policy and regulatory systems."
+        buttonText="Open the Assessment Form"
+        buttonTo="/assessment"
+      />
+
+      <CtaBanner
         kicker="Methodology"
         title="Understand how a country's biological crop protection environment is measured"
-        caption="Stakeholder ratings of importance and performance are combined into a weighted, comparable country-level index."
+        caption="Stakeholder ratings of importance and performance are balanced across stakeholder groups and combined into a weighted, comparable country-level index."
         buttonText="Read the Methodology"
         buttonTo="/methodology"
       />

@@ -6,6 +6,7 @@ import { Domains } from './pages/Domains';
 import { Methodology } from './pages/Methodology';
 import { KenyaPilot } from './pages/KenyaPilot';
 import { Users } from './pages/Users';
+import { Assessment } from './pages/Assessment';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/methodology" element={<Methodology />} />
         <Route path="/kenya" element={<KenyaPilot />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/assessment" element={<Assessment />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

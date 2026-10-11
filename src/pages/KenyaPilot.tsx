@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CheckList, PageHeader, Section } from '../components/Page';
 
 const INSTITUTIONS = [
@@ -80,6 +81,22 @@ export function KenyaPilot() {
           </p>
         </div>
       </Section>
+
+      <section className="cta">
+        <div className="container cta__inner">
+          <div className="cta__content">
+            <p className="cta__kicker">Participate</p>
+            <h2 className="cta__headline">Contribute to the BioCOPPA country assessment</h2>
+            <p className="cta__caption">
+              Stakeholders in the biological crop protection sector can share their perspective on indicator
+              importance and performance through the BioCOPPA assessment form.
+            </p>
+            <Link to="/assessment" className="btn btn--gold">
+              Take the BioCOPPA Assessment
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

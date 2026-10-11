@@ -27,6 +27,9 @@ export function AppLayout() {
           <div className="container utility-bar__inner">
             <span className="utility-bar__note">Biological Crop Protection Products Access Index</span>
             <div className="utility-bar__links">
+              <NavLink to="/assessment" className="utility-bar-link">
+                Take the Assessment
+              </NavLink>
               <NavLink to="/kenya" className="utility-bar-link">
                 Kenya Pilot · April 2026
               </NavLink>
@@ -122,6 +125,14 @@ export function AppLayout() {
                 </li>
                 <li>
                   <NavLink to="/users">Intended Users</NavLink>
+                </li>
+              </ul>
+            </div>
+            <div className="site-footer__col">
+              <p className="site-footer__heading">Participate</p>
+              <ul className="site-footer__links">
+                <li>
+                  <NavLink to="/assessment">Take the Assessment</NavLink>
                 </li>
               </ul>
             </div>

@@ -183,8 +183,8 @@ export function Methodology() {
           information but are not assigned a national BioCOPPA score.
         </p>
         <div className="section__actions">
-          <Link to="/assessment" className="btn btn--green">
-            Take the BioCOPPA Assessment
+          <Link to="/calculator" className="btn btn--green">
+            Open the Score Calculator
           </Link>
         </div>
       </Section>

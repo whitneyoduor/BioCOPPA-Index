@@ -9,6 +9,6 @@ export const NAV_ITEMS: NavItem[] = [
   { to: '/domains', label: 'The Three Domains' },
   { to: '/methodology', label: 'Methodology' },
   { to: '/kenya', label: 'Kenya Pilot' },
-  { to: '/users', label: 'Users' },
-  { to: '/assessment', label: 'Take the Assessment' },
+  { to: '/calculator', label: 'Score Calculator' },
+  { to: '/assessment', label: 'Response Form' },
 ];

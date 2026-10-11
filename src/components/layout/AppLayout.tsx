@@ -27,14 +27,14 @@ export function AppLayout() {
           <div className="container utility-bar__inner">
             <span className="utility-bar__note">Biological Crop Protection Products Access Index</span>
             <div className="utility-bar__links">
+              <NavLink to="/calculator" className="utility-bar-link">
+                Score Calculator
+              </NavLink>
               <NavLink to="/assessment" className="utility-bar-link">
-                Take the Assessment
+                Response Form
               </NavLink>
               <NavLink to="/kenya" className="utility-bar-link">
                 Kenya Pilot · April 2026
-              </NavLink>
-              <NavLink to="/users" className="utility-bar-link">
-                Intended Users
               </NavLink>
             </div>
           </div>
@@ -132,7 +132,10 @@ export function AppLayout() {
               <p className="site-footer__heading">Participate</p>
               <ul className="site-footer__links">
                 <li>
-                  <NavLink to="/assessment">Take the Assessment</NavLink>
+                  <NavLink to="/calculator">Calculate a Score</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/assessment">Submit the Response Form</NavLink>
                 </li>
               </ul>
             </div>

@@ -1,6 +1,6 @@
 import type { Dataset, Level } from './types';
 
-interface Seed {
+export interface Seed {
   code: string;
   name: string;
   domain: 'research' | 'industry' | 'policy';
@@ -15,7 +15,7 @@ const R = 'research';
 const I = 'industry';
 const P = 'policy';
 
-const INDICATORS: Seed[] = [
+export const INDICATORS: Seed[] = [
   // ---------------- Research & Development ----------------
   {
     code: 'RD-01',

@@ -144,8 +144,8 @@ export function About() {
             strengthening and collaboration may be most needed.
           </p>
           <p>
-            <Link to="/assessment" className="btn btn--gold">
-              Take the BioCOPPA Assessment
+            <Link to="/calculator" className="btn btn--gold">
+              Open the Score Calculator
             </Link>
           </p>
         </div>

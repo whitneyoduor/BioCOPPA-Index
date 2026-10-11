@@ -91,8 +91,8 @@ export function KenyaPilot() {
               Stakeholders in the biological crop protection sector can share their perspective on indicator
               importance and performance through the BioCOPPA assessment form.
             </p>
-            <Link to="/assessment" className="btn btn--gold">
-              Take the BioCOPPA Assessment
+            <Link to="/calculator" className="btn btn--gold">
+              Open the Score Calculator
             </Link>
           </div>
         </div>

@@ -61,8 +61,8 @@ export function Users() {
             stakeholder-informed picture of the enabling environment.
           </p>
           <p>
-            <Link to="/assessment" className="btn btn--green">
-              Take the BioCOPPA Assessment
+            <Link to="/calculator" className="btn btn--green">
+              Open the Score Calculator
             </Link>
           </p>
         </div>

@@ -41,14 +41,14 @@ export function Home() {
             country-level index across research, industry, policy and regulatory systems.
           </p>
           <div className="hero__actions">
-            <Link to="/domains" className="btn btn--gold">
+            <Link to="/calculator" className="btn btn--gold">
+              Calculate a Country Score
+            </Link>
+            <Link to="/domains" className="btn btn--outline-light">
               Explore the Three Domains
             </Link>
             <Link to="/methodology" className="btn btn--outline-light">
               Read the Methodology
-            </Link>
-            <Link to="/assessment" className="btn btn--outline-light">
-              Take the Assessment
             </Link>
           </div>
         </div>
@@ -139,11 +139,11 @@ export function Home() {
       </section>
 
       <CtaBanner
-        kicker="Participate"
-        title="Take part in the BioCOPPA country assessment"
-        caption="Stakeholders assess the importance and performance of indicators across research, industry, policy and regulatory systems."
-        buttonText="Open the Assessment Form"
-        buttonTo="/assessment"
+        kicker="Calculate a score"
+        title="Rate the indicators and get an instant BioCOPPA score"
+        caption="Stakeholders rate the importance and performance of indicators across research, industry, policy and regulatory systems — the calculator does the rest."
+        buttonText="Open the Score Calculator"
+        buttonTo="/calculator"
       />
 
       <CtaBanner

@@ -1,0 +1,67 @@
+{
+  "Kenya": {
+    "country": "Kenya",
+    "country_code": "KEN",
+    "assessment_year": 2026,
+    "status": "eligible",
+    "eligible_for_index": true,
+    "respondent_count": 70,
+    "minimum_required": 70,
+    "stakeholder_groups": 7,
+    "group_counts": {
+      "Farmer": 10,
+      "Industry Player": 10,
+      "NGO / Development Organisation": 10,
+      "Policy Actor": 10,
+      "Regulator": 10,
+      "Research & Academia": 10,
+      "Value-Chain Actor": 10
+    },
+    "overall_score_1_to_5": 3.67,
+    "overall_percentage": 73.3,
+    "message": null,
+    "domains": [
+      {
+        "domain_id": "research",
+        "domain_name": "Research & Development",
+        "score_1_to_5": 4.0,
+        "percentage": 80.0
+      },
+      {
+        "domain_id": "industry",
+        "domain_name": "Industry Competitiveness",
+        "score_1_to_5": 3.45,
+        "percentage": 69.1
+      },
+      {
+        "domain_id": "policy",
+        "domain_name": "Policy, Regulatory Frameworks & Capacity",
+        "score_1_to_5": 3.55,
+        "percentage": 70.9
+      }
+    ]
+  },
+  "Uganda": {
+    "country": "Uganda",
+    "country_code": "UGA",
+    "assessment_year": 2026,
+    "status": "insufficient_sample",
+    "eligible_for_index": false,
+    "respondent_count": 67,
+    "minimum_required": 70,
+    "stakeholder_groups": 7,
+    "group_counts": {
+      "Farmer": 10,
+      "Industry Player": 10,
+      "NGO / Development Organisation": 10,
+      "Policy Actor": 10,
+      "Regulator": 10,
+      "Research & Academia": 10,
+      "Value-Chain Actor": 7
+    },
+    "overall_score_1_to_5": null,
+    "overall_percentage": null,
+    "domains": null,
+    "message": "Index score not yet available. This country has not met the minimum balanced respondent threshold required to calculate a BioCOPPA Index score."
+  }
+}

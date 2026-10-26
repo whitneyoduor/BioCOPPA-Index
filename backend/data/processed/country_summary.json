@@ -1,0 +1,28 @@
+[
+  {
+    "country": "Kenya",
+    "country_code": "KEN",
+    "assessment_year": 2026,
+    "status": "eligible",
+    "eligible_for_index": true,
+    "respondent_count": 70,
+    "minimum_required": 70,
+    "overall_score_1_to_5": 3.67,
+    "overall_percentage": 73.3,
+    "message": null,
+    "rank": 1
+  },
+  {
+    "country": "Uganda",
+    "country_code": "UGA",
+    "assessment_year": 2026,
+    "status": "insufficient_sample",
+    "eligible_for_index": false,
+    "respondent_count": 67,
+    "minimum_required": 70,
+    "overall_score_1_to_5": null,
+    "overall_percentage": null,
+    "message": "Index score not yet available. This country has not met the minimum balanced respondent threshold required to calculate a BioCOPPA Index score.",
+    "rank": null
+  }
+]

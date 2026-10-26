@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckList, CtaBanner, Section } from '../components/Page';
 import { DOMAIN_CONTENT } from '../content/domains';
@@ -42,106 +43,308 @@ export function Home() {
             regulatory systems.
           </p>
           <div className="hero__actions">
-            <Link to="/domains" className="btn btn--gold">
-              Explore the Three Domains
+            <Link to="/index" className="btn btn--gold">
+              Explore the Index
             </Link>
-            <Link to="/methodology" className="btn btn--outline-light">
-              Read the Methodology
+
+            <Link to="/contribute" className="btn btn--outline-light">
+              Contribute to the Index
             </Link>
           </div>
         </div>
       </section>
 
-      <Section id="overview" title="About the Index" className="section--white">
-        <div className="two-col">
-          <p>
-            The Biological Crop Protection Products Access (BioCOPPA) Index is a tool designed to assess the
-            enabling environment for biological crop protection products (BCPPs), including biopesticides and
-            biological control agents.
-          </p>
-          <p>
-            The index measures the extent to which a country&rsquo;s research, industry, policy, regulatory,
-            institutional, and market systems support the development, registration, production, distribution,
-            accessibility, and adoption of biological crop protection products.
-          </p>
+      <section className="glance-section">
+        <div className="container">
+           <div className="glance-section__header">
+             <p className="glance-section__kicker">BioCOPPA at a glance</p>
+
+             <p className="glance-section__intro">
+              BioCOPPA assessments bring together perspectives from key stakeholder
+              groups to build comparable country-level evidence.
+             </p>
+           </div>
+
+           <div className="glance-grid">
+             <GlanceCounter target={2} label="Countries Assessed" />
+             <GlanceCounter target={7} label="Stakeholder Groups" />
+             <GlanceCounter target={137} label="Participants" />
+         </div>
         </div>
-        <p className="section__lead">
-          BioCOPPA combines stakeholder assessments of the importance of specific factors with assessments of
-          the country&rsquo;s current performance or status in those areas. These assessments are used to
-          produce a measurable country-level index.
-        </p>
-      </Section>
+      </section>
 
-      <Section
-        id="purpose"
-        kicker="What the index is for"
-        title="Purpose of the BioCOPPA Index"
-        className="section--cream"
-      >
-        <CheckList items={PURPOSE_ITEMS} />
-      </Section>
+      <section className="index-preview-section">
+        <div className="container">
+           <div className="index-preview-section__header">
+            <p className="index-preview-section__kicker">Explore the Index</p>
 
-      <Section
-        id="domains"
-        kicker="The framework"
-        title="The Three BioCOPPA Domains"
-        intro="Each domain contributes to a country's overall enabling environment for biological crop protection products."
-        className="section--white"
-      >
-        <div className="card-grid">
-          {DOMAIN_CONTENT.map((domain, i) => (
-            <article key={domain.id} className="card card--domain">
-              <span className="card__num">0{i + 1}</span>
-              <p className="card__kicker">{domain.kicker}</p>
-              <h3 className="card__title">{domain.shortTitle}</h3>
-              <p className="card__text">{domain.short}</p>
-              <Link to="/domains" className="card__link">
-                Explore this domain <span aria-hidden="true">→</span>
-              </Link>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      <section className="pilot-strip">
-        <div className="container pilot-strip__inner">
-          <div className="pilot-strip__body">
-            <p className="pilot-strip__kicker">Kenya Pilot</p>
-            <h2 className="pilot-strip__title">
-              Validated with national stakeholders in Nairobi
+            <h2 className="index-preview-section__title">
+             See how countries are performing
             </h2>
-            <p className="pilot-strip__text">
-              On 29 April 2026, the BioCOPPA Index was piloted in Kenya through a national stakeholder
-              validation workshop hosted at the Pest Control Products Board (PCPB) in Nairobi.
+
+            <p className="index-preview-section__intro">
+             Compare the enabling environment for biological crop protection products
+             across participating countries. Country scores are published once the
+             minimum balanced respondent requirements have been met.
             </p>
-            <Link to="/kenya" className="btn btn--green">
-              Read the Kenya Pilot
-            </Link>
+           </div>
+
+           <div className="index-table-wrap">
+             <div className="index-table">
+               <div className="index-table__row index-table__row--head">
+                 <div>Country</div>
+                 <div>R&amp;D</div>
+                 <div>Industry</div>
+                 <div>Policy &amp; Regulatory</div>
+                 <div>Overall Index</div>
+                 <div>Percentage</div>
+               </div>
+
+               <div className="index-table__row">
+                 <div className="index-table__country">
+                   <strong>Kenya</strong>
+                   <span>Eligible</span>
+                 </div>
+
+                 <div className="index-table__score">4.00</div>
+                 <div className="index-table__score">3.45</div>
+                 <div className="index-table__score">3.55</div>
+
+                 <div className="index-table__score index-table__score--overall">3.67</div>
+
+                 <div className="index-table__score">73.3%</div>
+               </div>
+
+               <div className="index-table__row index-table__row--pending">
+                 <div className="index-table__country">
+                   <strong>Uganda</strong>
+                   <span>Assessment in progress</span>
+                 </div>
+
+                 <div className="index-table__dash">—</div>
+                 <div className="index-table__dash">—</div>
+                 <div className="index-table__dash">—</div>
+                 <div className="index-table__pending">Pending</div>
+                 <div className="index-table__dash">—</div>
+               </div>
+             </div>
+           </div>
+
+               <div className="index-preview-section__footer">
+                 <span className="index-preview-section__note">
+                   Domain and overall index scores are shown on a 1–5 scale. Percentage scores are shown on a 0–100 scale.
+                 </span>
+
+                 <Link to="/index" className="index-preview-section__more">
+                   <span>Explore the Full Index</span>
+                   <span className="index-preview-section__arrow" aria-hidden="true">
+                     ↓
+                   </span>
+                 </Link>
+               </div>
+           </div>
+         </section>
+      <section className="home-domains-section">
+        <div className="container">
+          <div className="home-domains-section__header">
+            <p className="home-domains-section__kicker">What BioCOPPA Measures</p>
+
+            <h2 className="home-domains-section__title">
+              Three domains shape the BioCOPPA Index
+            </h2>
+
+            <p className="home-domains-section__intro">
+              Together, the three domains provide a structured view of the research,
+              market, policy, and regulatory conditions surrounding biological crop
+              protection products.
+            </p>
           </div>
-          <div className="pilot-strip__meta">
-            <div className="pilot-strip__stat">
-              <span className="pilot-strip__stat-value">29</span>
-              <span className="pilot-strip__stat-label">April 2026</span>
-            </div>
-            <div className="pilot-strip__stat">
-              <span className="pilot-strip__stat-value">PCPB</span>
-              <span className="pilot-strip__stat-label">Host · Nairobi</span>
-            </div>
-            <div className="pilot-strip__stat">
-              <span className="pilot-strip__stat-value">3</span>
-              <span className="pilot-strip__stat-label">Domains validated</span>
-            </div>
+
+          <div className="home-domains-grid">
+            {DOMAIN_CONTENT.map((domain, index) => (
+              <article className="home-domain-card" key={domain.id}>
+                <span className="home-domain-card__number">0{index + 1}</span>
+
+                <div className="home-domain-card__content">
+                  <h3 className="home-domain-card__title">{domain.shortTitle}</h3>
+
+                  <p className="home-domain-card__description">
+                    {domain.short}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="home-domains-section__action">
+            <Link to="/about" className="btn btn--gold">
+              Learn More About the Index
+            </Link>
           </div>
         </div>
       </section>
 
-      <CtaBanner
-        kicker="Methodology"
-        title="Understand how a country's biological crop protection environment is measured"
-        caption="Stakeholder ratings of importance and performance are combined into a weighted, comparable country-level index."
-        buttonText="Read the Methodology"
-        buttonTo="/methodology"
-      />
+      <section className="home-value-section">
+        <div className="container">
+          <div className="home-value-section__header">
+            <p className="home-value-section__kicker">Why BioCOPPA Matters</p>
+
+            <h2 className="home-value-section__title">
+              Turning stakeholder evidence into actionable insight
+            </h2>
+
+            <p className="home-value-section__intro">
+              BioCOPPA helps decision-makers understand where enabling environments
+              are strong, where gaps remain, and where targeted action can have the
+              greatest impact.
+            </p>
+          </div>
+
+          <div className="home-value-grid">
+            <article className="home-value-card">
+              <span className="home-value-card__number">01</span>
+
+              <h3 className="home-value-card__title">Measure</h3>
+
+              <p className="home-value-card__text">
+                Assess the conditions shaping the development, access, and uptake of
+                biological crop protection products.
+              </p>
+            </article>
+
+            <article className="home-value-card">
+              <span className="home-value-card__number">02</span>
+
+              <h3 className="home-value-card__title">Compare</h3>
+
+              <p className="home-value-card__text">
+                Understand differences in enabling environments across countries and
+                across the BioCOPPA domains.
+              </p>
+            </article>
+
+            <article className="home-value-card">
+              <span className="home-value-card__number">03</span>
+
+              <h3 className="home-value-card__title">Act</h3>
+
+              <p className="home-value-card__text">
+                Identify priorities for policy reform, investment, capacity building,
+                and collaboration.
+              </p>
+            </article>
+          </div>
+
+          <div className="home-value-section__action">
+            <Link to="/about" className="btn btn--green">
+              About the Index
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="home-resource-section">
+        <div className="container home-resource-section__grid">
+          <div className="home-resource-section__content">
+            <p className="home-resource-section__kicker">Featured Resource</p>
+
+            <h2 className="home-resource-section__title">
+              Kenya Pilot 2026
+            </h2>
+
+            <p className="home-resource-section__text">
+              The BioCOPPA Index was piloted in Kenya through a national stakeholder
+              validation workshop hosted at the Pest Control Products Board in Nairobi
+              on 29 April 2026.
+            </p>
+
+            <p className="home-resource-section__text">
+              The pilot provided critical feedback on the framework, indicators,
+              assessment criteria, and scoring approach, helping strengthen the
+              BioCOPPA methodology for wider country application.
+            </p>
+
+            <Link to="/resources" className="btn btn--gold">
+              Explore Resources
+            </Link>
+          </div>
+
+          <div className="home-resource-section__meta">
+            <div className="home-resource-stat">
+              <strong>29</strong>
+              <span>April 2026</span>
+            </div>
+
+            <div className="home-resource-stat">
+              <strong>PCPB</strong>
+              <span>Host · Nairobi</span>
+            </div>
+
+            <div className="home-resource-stat">
+              <strong>3</strong>
+              <span>Domains Validated</span>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
+  );
+}
+function GlanceCounter({
+  target,
+  label,
+}: {
+  target: number;
+  label: string;
+}) {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const counterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const element = counterRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+        }
+      },
+      {
+        threshold: 0.4,
+      },
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  useEffect(() => {
+    if (!hasAnimated) return;
+
+    const duration = 1200;
+    const startTime = performance.now();
+
+    const animate = (currentTime: number) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const nextValue = Math.round(progress * target);
+
+      setCount(nextValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [hasAnimated, target]);
+
+  return (
+    <div className="glance-stat" ref={counterRef}>
+      <strong className="glance-stat__value">{count}</strong>
+      <span className="glance-stat__label">{label}</span>
+    </div>
   );
 }

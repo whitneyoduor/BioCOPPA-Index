@@ -1,0 +1,15 @@
+/* --------------------------------------------------------------------------
+   Domains page
+   -------------------------------------------------------------------------- */
+
+.domain-group {
+  margin-top: 2.5rem;
+}
+
+.domain-group__heading {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--gold);
+}
+

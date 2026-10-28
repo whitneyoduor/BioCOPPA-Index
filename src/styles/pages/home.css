@@ -1,0 +1,883 @@
+/* --------------------------------------------------------------------------
+   Home hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  background-image: url('/images/hero.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the content vertically */
+  padding-top: var(--header-h); /* Only offset the fixed header */
+  color: var(--white);
+}
+
+/* Make the headline slightly smaller so it fits */
+.hero__headline {
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(15, 23, 16, 0.55);
+  font-size: clamp(2rem, 3.5vw, 2.8rem); /* Reduced from 3.5rem */
+  margin-bottom: 0.5rem;
+}
+
+/* Reduce the margin under the tagline */
+.hero__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.25rem); /* Slightly smaller */
+  color: var(--gold-light);
+  margin: 0 0 1rem; /* Reduced bottom margin */
+}
+/* Solid, subtle dark overlay instead of a gradient */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 36, 17, 0.6); /* Adjust 0.6 to make it darker/lighter */
+  z-index: 1;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+}
+
+.hero__content {
+  max-width: 650px;
+}
+
+.hero__kicker {
+  margin: 0 0 1.1rem;
+  font-family: var(--font-head);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero__headline {
+  color: var(--white);
+  text-shadow: 0 2px 12px rgba(15, 23, 16, 0.55);
+}
+
+.hero__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.6vw, 1.5rem);
+  color: var(--gold-light);
+  margin: 0 0 1.4rem;
+}
+
+.hero__caption {
+  max-width: 62ch;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 2rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+/* =========================================================
+   HOME — BIOCOPPA AT A GLANCE
+========================================================= */
+
+.glance-section {
+  background: #f8f5ec;
+  padding: 56px 0;
+}
+
+.glance-section__header {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.glance-section__kicker {
+  margin: 0 0 14px;
+  color: #375e2d;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.glance-section__intro {
+  margin: 0;
+  color: #4b5563;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.glance-stat {
+  position: relative;
+  padding: 22px 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(55, 94, 45, 0.08);
+  border-radius: 16px;
+}
+
+.glance-stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: 0;
+  width: 1px;
+  height: 76%;
+  background: rgba(55, 94, 45, 0.18);
+}
+
+.glance-stat__value {
+  display: block;
+  margin-bottom: 8px;
+  color: #375e2d;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.glance-stat__label {
+  display: block;
+  color: #4b5563;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .glance-section {
+    padding: 56px 0;
+  }
+
+  .glance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glance-stat {
+    padding: 24px 20px;
+  }
+
+  .glance-stat:not(:last-child)::after {
+    top: auto;
+    right: 20%;
+    bottom: 0;
+    width: 60%;
+    height: 1px;
+  }
+}
+/* =========================================================
+   HOME — INDEX PREVIEW
+========================================================= */
+
+.index-preview-section {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+.index-split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.index-preview-section__header {
+  margin: 0;
+  text-align: left;
+}
+
+.index-preview-section__kicker {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.index-preview-section__title {
+  margin: 0 0 15px;
+  color: var(--green);
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.index-preview-section__intro {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.index-preview-section__footer {
+  display: flex;
+}
+
+.index-table-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--tan);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.index-table {
+  width: 100%;
+}
+
+.index-table__row {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, minmax(0, 1fr));
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--tan);
+}
+
+.index-table__row > div {
+  text-align: center;
+}
+
+.index-table__row > div:first-child {
+  text-align: left;
+}
+
+.index-table__row:last-child {
+  border-bottom: none;
+}
+
+.index-table__row--head {
+  background: var(--cream);
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.index-table__country {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-table__country strong {
+  display: block;
+  color: var(--green);
+  font-size: 1.1rem;
+}
+
+.index-table__country span {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+.index-table__score {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.index-table__score--overall {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.index-table__dash,
+.index-table__pending {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.index-table__row--pending {
+  background: var(--cream);
+}
+
+.index-preview-section__note {
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+@media (max-width: 900px) {
+  .index-split-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .index-preview-section__header {
+    text-align: center;
+  }
+
+  .index-preview-section__footer {
+    justify-content: center;
+  }
+}
+/* =========================================================
+   HOME — WHAT BIOCOPPA MEASURES
+========================================================= */
+/* --- 4. THREE DOMAINS --- */
+.home-domains-section {
+  background: #f9f6f0; /* Light cream */
+  /* Reduced padding from 80px to 50px */
+  padding: 50px 0; 
+}
+
+.home-domains-section__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px; /* Reduced bottom margin */
+}
+
+.home-domains-section__kicker {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.home-domains-section__title {
+  font-size: 2rem;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.home-domains-section__intro {
+  color: #555;
+}
+
+.home-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Slightly tighter gap between cards */
+  margin-bottom: 30px;
+}
+
+.home-domain-card {
+  background: white;
+  /* Reduced padding inside the card */
+  padding: 25px 20px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--green);
+  /* This ensures the cards don't stretch to be giant boxes */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.home-domain-card__number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.home-domain-card__title {
+  font-size: 1.2rem;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.home-domain-card__description {
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+  transition:
+    opacity 0.28s ease,
+    transform 0.28s ease;
+
+
+.home-domain-card:hover .home-domain-card__title {
+  transform: translateY(-6px);
+}
+
+.home-domain-card:hover .home-domain-card__description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-domains-section__action,
+.home-value-section__action {
+  margin-top: 32px;
+}
+
+.home-domains-section__action {
+  display: flex;
+  justify-content: center;
+}
+
+.home-value-section__action {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .home-resource-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-domains-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-domain-card {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-domains-section {
+    padding: 68px 0;
+  }
+
+  .home-domain-card {
+    padding: 26px;
+  }
+
+  .home-domain-card__number {
+    margin-bottom: 32px;
+  }
+
+  .home-domain-card__description {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* =========================================================
+   HOME — FEATURED RESOURCE
+========================================================= */
+
+.home-resource-section {
+  background: #1c301d;
+  padding: 68px 0;
+}
+
+.home-resource-section__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.home-resource-section__content {
+  max-width: 650px;
+}
+
+.home-resource-section__kicker {
+  margin: 0 0 12px;
+  color: #efcb16;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-resource-section__title {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+}
+
+.home-resource-section__text {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.home-resource-section__content .btn {
+  margin-top: 14px;
+}
+
+.home-resource-section__meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.home-resource-stat {
+  min-height: 145px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.home-resource-stat strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #efcb16;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.home-resource-stat span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-resource-stat:last-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .home-resource-section__grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  .home-resource-section__meta {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-resource-section {
+    padding: 68px 0;
+  }
+
+  .home-resource-section__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .home-resource-stat:last-child {
+    grid-column: auto;
+  }
+}
+/* =========================================================
+   HOME — WHY BIOCOPPA MATTERS
+========================================================= */
+
+/* --- 5. HOW IT WORKS --- */
+.home-value-section {
+  padding: 50px 0;
+  background: var(--white);
+}
+
+.home-value-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.home-value-header {
+  position: sticky;
+  top: 120px; /* Keeps the title visible as you scroll the steps */
+}
+
+.home-value-section__kicker {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.home-value-section__title {
+  font-size: 2.5rem;
+  color: var(--green);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.home-value-section__intro {
+  color: var(--text-soft);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* The Steps on the right */
+.home-value-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-value-step {
+  display: flex;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--tan);
+}
+
+.home-value-step:first-child {
+  padding-top: 0;
+}
+
+.home-value-step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.home-value-step__number {
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.home-value-step__title {
+  font-size: 1.3rem;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.home-value-step__text {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-value-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .home-value-header {
+    position: relative;
+    top: 0;
+  }
+}
+@media (max-width: 900px) {
+  .home-value-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-value-section {
+    padding: 68px 0;
+  }
+}
+/* --------------------------------------------------------------------------
+   Home page specific layouts
+   -------------------------------------------------------------------------- */
+
+/* Floating Stats Bar */
+.glance-section {
+  position: relative;
+  z-index: 10;
+  margin-top: -80px; /* Pulls the bar up over the hero image */
+}
+
+.glance-section__inner {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+}
+
+.glance-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.glance-stat {
+  flex: 1;
+  border-right: 1px solid rgba(196, 184, 154, 0.5);
+}
+
+.glance-stat:last-child {
+  border-right: none;
+}
+
+.glance-stat__value {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  color: var(--green);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.glance-stat__label {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Kenya Pilot Split Block */
+.home-resource-section {
+  background: var(--green-deep);
+  padding: 0;
+}
+
+.home-resource-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 500px;
+  min-height: 400px;
+}
+
+.home-resource-content {
+  padding: 50px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.home-resource-kicker {
+  color: var(--gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;
+}
+
+.home-resource-title {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.home-resource-text {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.home-resource-image {
+  height: 100%;
+  width: 100%;
+}
+
+.home-resource-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .glance-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .glance-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(196, 184, 154, 0.5);
+    padding-bottom: 20px;
+  }
+  .glance-stat:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .home-resource-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-resource-image {
+    min-height: 300px;
+  }
+}
+/* --- 2. TYPOGRAPHIC STATS & INTRO --- */
+.home-intro-section {
+  padding: 3rem 0;
+  background-color: var(--white);
+}
+
+.home-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.home-intro-kicker {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+
+.home-intro-desc {
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* The typographic numbers */
+.home-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.glance-stat {
+  /* Removed all borders, boxes, and backgrounds */
+  text-align: left;
+}
+
+.glance-stat__value {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 4rem; /* Massive numbers */
+  color: var(--green);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.glance-stat__label {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  line-height: 1.4;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .home-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .home-stats-grid {
+    gap: 1rem;
+  }
+  .glance-stat__value {
+    font-size: 3rem; /* Slightly smaller on mobile */
+  }
+}
